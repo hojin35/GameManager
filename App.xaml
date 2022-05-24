@@ -1,0 +1,29 @@
+﻿<Application x:Class="WpfApp2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp2"
+             xmlns:viewModel="clr-namespace:WpfApp2.MVVM.ViewModel"
+             xmlns:view="clr-namespace:WpfApp2.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:RealTimeViewModel}">
+                <view:RealTimeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RecordViewModel}">
+                <view:RecordView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:DrawTeamViewModel}">
+                <view:DrawTeamView/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
